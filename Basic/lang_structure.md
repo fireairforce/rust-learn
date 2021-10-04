@@ -75,6 +75,8 @@ rust 支持多种注释
 
 ```rust
 macro_rules! calculate {
+  // (eval 1 + 2)
+  // $e 类型为 expr(表达式词条结构的类型)
   (eval $e:expr) => {{
     {
       // 1 + 2 会替换到 $e 这里
@@ -95,3 +97,51 @@ fn main() {
 }
 ```
 
+### 路径
+
+```rust
+fn main() {
+  pub mod a {
+    fn foo() { println!("a"); }
+
+    pub mod b {
+      pub mod c {
+        pub fn foo() {
+          // a -> b -> c
+          super::super::foo(); // call a's foo function
+          // 这里就类似于一个分割符
+          self::super::super::foo(); // call a's foo function
+        }
+      }
+    }
+  }
+
+  a::b::c::foo();
+
+  // 方法调用
+
+  struct S;
+  impl S {
+    fn f() {
+      println!("S");
+    }
+  }
+  trait T1 {
+    fn f() { println!("T1 f"); }
+  }
+  impl T1 for S {}
+  trait T2 {
+    fn f() { println!("T2 f"); }
+  }
+  impl T2 for S {}
+  S::f(); // call the inherent impl
+  // 完全限定
+  <S as T1>::f(); // call t1 trait function
+  <S as T2>::f(); // call t2 trait function
+
+  // 泛型函数 - turbofish 操作符
+  
+  (0..10).collect::<Vec<_>>();
+  Vec::<u8>::with_capacity(1024);
+}
+```
