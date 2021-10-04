@@ -67,4 +67,31 @@ rust 支持多种注释
 ```
 
 
+### 空白
+
+### 词条
+
+在写宏的时候会比较有用
+
+```rust
+macro_rules! calculate {
+  (eval $e:expr) => {{
+    {
+      // 1 + 2 会替换到 $e 这里
+      let val: usize = $e;
+      println!("{} = {}", stringify!{$e}, val);
+    }
+  }};
+}
+
+fn main() {
+  calculate! {
+    eval 1 + 2 // `eval` 并不是 rust 的关键字
+  }
+
+  calculate! {
+    eval (1 + 2) * (3 / 4)
+  }
+}
+```
 
