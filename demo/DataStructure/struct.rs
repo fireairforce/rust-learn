@@ -41,3 +41,12 @@ fn main() {
   let event3 = Event::Message((alice.id, topic.id, "Hello world!".into()));
   println!("event1: {:?}, event2: {:?}, event3: {:?}", event1, event2, event3);
 }
+
+fn process_eve(event: &Event) {
+  match event {
+    Event::Join((uid, _tid)) => print!("user {:?} joined", uid),
+    Event::Leave((uid, _tid)) => print!("user {:?} left {:?}", uid, _tid),
+    Event::Message((_,_, msg)) => print!("xxx: {}", msg),
+  }
+}
+
