@@ -7,6 +7,6 @@ fn main() {
     Ok(file) => file,
     Err(err) => {
       panic!("Problem opening file: {:?}", err);
-    }
-  }
+    },
+  };
 }
