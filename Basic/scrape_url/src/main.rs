@@ -1,8 +1,11 @@
 use std::fs;
+use std::env;
 
 fn main() {
-    let url = "https://www.baidu.com/";
-    let output = "rust.md";
+
+    let args: Vec<String> = env::args().collect();
+    let (url, output) = (&args[1], &args[2]);
+    println!("The all args are is {:?}", args);
 
     println!("Fetching url: {}", url);
 
