@@ -3,7 +3,9 @@ use std::env;
 
 fn main() {
 
+    // .collect() 能创建一个包含迭代器所有值的 vector
     let args: Vec<String> = env::args().collect();
+    // 这里要取引用
     let (url, output) = (&args[1], &args[2]);
     println!("The all args are is {:?}", args);
 
