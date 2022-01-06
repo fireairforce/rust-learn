@@ -1,23 +1,24 @@
-use clap::{ AppSettings, Clap };
+use clap::Parser;
 
-#[derive(Clap, Debug)]
+#[derive(Parser, Debug)]
 #[clap(version = "1.0", author = "zoomdong")]
-#[clap(setting = AppSettings::ColoredHelp)]
 struct Opts {
   #[clap(subcommand)]
   subcmd: SubCommand,
 }
 
-#[derive(Clap, Debug)]
+#[derive(Parser, Debug)]
 enum SubCommand {
   Get(Get),
   Post(Post),
 }
 
+#[derive(Parser, Debug)]
 struct Get {
   url: String,
 }
 
+#[derive(Parser, Debug)]
 struct Post {
   url: String,
   body: Vec<String>,
