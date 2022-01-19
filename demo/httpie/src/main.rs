@@ -39,7 +39,8 @@ struct Post {
   body: Vec<KvPair>,
 }
 
-#[derive(Debug)]
+// 这里要加上 PartialEq 否则测试会跑不过去
+#[derive(Debug, PartialEq)]
 struct KvPair {
   k: String,
   v: String,
@@ -125,19 +126,7 @@ mod tests {
   #[test]
   fn parse_kv_pair_works() {
     assert!(parse_kv_pair("a").is_err());
-    assert_eq!(
-      parse_kv_pair("a=1").unwrap(),
-      KvPair {
-        k: "a".into(),
-        v: "1".into()
-      }
-    );
-    assert_eq!(
-      parse_kv_pair("b=").unwrap(),
-      KvPair {
-        k: "b".into(),
-        v: "".into()
-      }
-    );
+    assert_eq!( parse_kv_pair("a=1").unwrap(), KvPair { k: "a".into(), v: "1".into() } );
+    assert_eq!( parse_kv_pair("b=").unwrap(), KvPair { k: "b".into(), v: "".into() } );
   }
 }
