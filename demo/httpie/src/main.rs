@@ -39,7 +39,8 @@ struct Post {
   body: Vec<KvPair>,
 }
 
-// 这里要加上 PartialEq 否则测试会跑不过去
+// 这里要加上 PartialEq 否则测试会跑不过去(派生的例子)
+// 参考文档: https://rustwiki.org/zh-CN/rust-by-example/trait/derive.html
 #[derive(Debug, PartialEq)]
 struct KvPair {
   k: String,
