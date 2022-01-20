@@ -59,7 +59,7 @@ impl From<resize::SampleFilter> for SamplingFilter {
 }
 
 // 辅助函数，简化 spec 创建过程
-imple spec {
+impl Spec {
   pub fn new_resize_seam_carve(width: u32, height: u32) -> Self {
     Self {
       data: Some(spec::Data::Resize(Resize{
@@ -72,12 +72,14 @@ imple spec {
   }
 
   pub fn new_resize(width: u32, height: u32, filter: resize::SampleFilter) -> Self {
-    data: Some(spec::Data::Resize(Resize{
-      width,
-      height,
-      rtype: resize::ResizeType::Normal as i32,
-      filter: filter as i32,
-    }))
+    Self {
+      data: Some(spec::Data::Resize(Resize {
+        width,
+        height,
+        rtype: resize::ResizeType::Normal as i32,
+        filter: filter as i32,
+      })),
+    }
   }
 
   pub fn new_filter(filter: filter::Filter) -> Self {
@@ -97,7 +99,7 @@ imple spec {
 
 #[cfg(test)]
 mod tests {
-  use::super::*;
+  use super::*;
   use std::borrow::Borrow;
   use std::convert::TryInto;
 
@@ -105,8 +107,8 @@ mod tests {
   fn encoded_spec_could_be_decoded() {
     let spec1 = Spec::new_resize(600, 600, resize::SampleFilter::CatmullRom);
     let spec2 = Spec::new_filter(filter::Filter::Marine);
-    let image_spec = ImageSpec::new(vec![spec1, spec1]);
+    let image_spec = ImageSpec::new(vec![spec1, spec2]);
     let s: String = image_spec.borrow().into();
-    assert_eq!(image. s.as_str().try_into().unwrap());
+    assert_eq!(image_spec, s.as_str().try_into().unwrap());
   }
 }
