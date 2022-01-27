@@ -9,7 +9,7 @@
 本地开发调试可以使用 `cargo run xxx` 来:
 
 ```bash
-cargo run post https://httpbin.org/post greeting=hola name=zoomdong
+cargo build --quiet && target/debug/httpie-zoomdong post https://httpbin.org/post greeting=hola name=zoomdong
 ```
 
 使用编译之后的包，可以先执行:
