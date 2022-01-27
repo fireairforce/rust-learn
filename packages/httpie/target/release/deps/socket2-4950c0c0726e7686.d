@@ -1,0 +1,11 @@
+/Users/bytedance/Documents/Projects/rust-learn/demo/httpie/target/release/deps/socket2-4950c0c0726e7686.rmeta: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/lib.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockaddr.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/socket.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockref.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sys/unix.rs
+
+/Users/bytedance/Documents/Projects/rust-learn/demo/httpie/target/release/deps/libsocket2-4950c0c0726e7686.rlib: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/lib.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockaddr.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/socket.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockref.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sys/unix.rs
+
+/Users/bytedance/Documents/Projects/rust-learn/demo/httpie/target/release/deps/socket2-4950c0c0726e7686.d: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/lib.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockaddr.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/socket.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockref.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sys/unix.rs
+
+/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/lib.rs:
+/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockaddr.rs:
+/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/socket.rs:
+/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sockref.rs:
+/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.2/src/sys/unix.rs:

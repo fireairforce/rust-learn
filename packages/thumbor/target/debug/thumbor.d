@@ -1,0 +1,1 @@
+/Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/target/debug/thumbor: /Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/build.rs /Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/src/main.rs /Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/src/pb/abi.rs /Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/src/pb/mod.rs
