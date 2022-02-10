@@ -1,4 +1,11 @@
-use axum::{extract::Path, handler::get, http::StatusCode, Router};
+use anyhow::Result;
+use axum::{
+    extract::{ Path, Extension },
+    handler::get,
+    http::{ StatusCode, HeaderValue, StatusCode },
+    Router,
+    AddExtensionLayer,
+};
 use percent_encoding::percent_decode_str;
 use serde::Deserialize;
 use std::convert::TryInto;
