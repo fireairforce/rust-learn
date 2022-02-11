@@ -1,8 +1,8 @@
-/Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/target/debug/build/futures-util-fdd6c069bdb82e6e/build_script_build-fdd6c069bdb82e6e: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.19/build.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.19/no_atomic_cas.rs
+/Users/zoomdong/Documents/github/rust-learn/packages/thumbor/target/debug/build/futures-util-fdd6c069bdb82e6e/build_script_build-fdd6c069bdb82e6e: /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/futures-util-0.3.19/build.rs /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/futures-util-0.3.19/no_atomic_cas.rs
 
-/Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/target/debug/build/futures-util-fdd6c069bdb82e6e/build_script_build-fdd6c069bdb82e6e.d: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.19/build.rs /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.19/no_atomic_cas.rs
+/Users/zoomdong/Documents/github/rust-learn/packages/thumbor/target/debug/build/futures-util-fdd6c069bdb82e6e/build_script_build-fdd6c069bdb82e6e.d: /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/futures-util-0.3.19/build.rs /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/futures-util-0.3.19/no_atomic_cas.rs
 
-/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.19/build.rs:
-/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.19/no_atomic_cas.rs:
+/Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/futures-util-0.3.19/build.rs:
+/Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/futures-util-0.3.19/no_atomic_cas.rs:
 
 # env-dep:CARGO_PKG_NAME=futures-util

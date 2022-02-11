@@ -1,10 +1,10 @@
-/Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/target/debug/deps/wasm_bindgen_shared-f6dbb900894e9674.rmeta: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-shared-0.2.79/src/lib.rs
+/Users/zoomdong/Documents/github/rust-learn/packages/thumbor/target/debug/deps/wasm_bindgen_shared-f6dbb900894e9674.rmeta: /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/wasm-bindgen-shared-0.2.79/src/lib.rs
 
-/Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/target/debug/deps/libwasm_bindgen_shared-f6dbb900894e9674.rlib: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-shared-0.2.79/src/lib.rs
+/Users/zoomdong/Documents/github/rust-learn/packages/thumbor/target/debug/deps/libwasm_bindgen_shared-f6dbb900894e9674.rlib: /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/wasm-bindgen-shared-0.2.79/src/lib.rs
 
-/Users/bytedance/Documents/Projects/rust-learn/demo/thumbor/target/debug/deps/wasm_bindgen_shared-f6dbb900894e9674.d: /Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-shared-0.2.79/src/lib.rs
+/Users/zoomdong/Documents/github/rust-learn/packages/thumbor/target/debug/deps/wasm_bindgen_shared-f6dbb900894e9674.d: /Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/wasm-bindgen-shared-0.2.79/src/lib.rs
 
-/Users/bytedance/.cargo/registry/src/github.com-1ecc6299db9ec823/wasm-bindgen-shared-0.2.79/src/lib.rs:
+/Users/zoomdong/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/wasm-bindgen-shared-0.2.79/src/lib.rs:
 
 # env-dep:CARGO_PKG_VERSION=0.2.79
 # env-dep:WBG_VERSION
