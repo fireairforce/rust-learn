@@ -14,7 +14,7 @@ lazy_static! {
   // 水印文件作为静态变量
   static ref WATERMARK: PhotonImage = {
     // 编译时 inclue_bytes! 宏会直接把文件读入编译后的二进制
-    let data = inclue_bytes!("../../logo.png");
+    let data = include_bytes!("../../logo.png");
     let watermark = open_image_from_bytes(data).unwrap();
     transform::resize(&watermark, 64, 64, transform::SamplingFilter::Nearest)
   };
@@ -24,7 +24,7 @@ lazy_static! {
 pub struct Photon(PhotonImage);
 
 // 从 Bytes 转换成 Photon 结构
-impl TryFrom<Bytes> for photon {
+impl TryFrom<Bytes> for Photon {
     type Error = anyhow::Error;
 
     fn try_from(data: Bytes) -> Result<Self, Self::Error> {
@@ -54,19 +54,13 @@ impl Engine for Photon {
     }
 }
 
-impl SpecTransform<&Crop> for photon {
-    fn transform(&mut self, op: &Crop) {
-        let img = transform::crop(&mut self.0, op.x1, op.y1, op.x2, op.y2);
-        self.0 = img;
-    }
-}
-
 impl SpecTransform<&Crop> for Photon {
     fn transform(&mut self, op: &Crop) {
         let img = transform::crop(&mut self.0, op.x1, op.y1, op.x2, op.y2);
         self.0 = img;
     }
 }
+
 impl SpecTransform<&Contrast> for Photon {
     fn transform(&mut self, op: &Contrast) {
         effects::adjust_contrast(&mut self.0, op.contrast);
@@ -92,10 +86,10 @@ impl SpecTransform<&Filter> for Photon {
     }
 }
 
-impl SpecTransform<&Resize> for photon {
+impl SpecTransform<&Resize> for Photon {
   fn transform(&mut self, op: &Resize) {
     let img = match resize::ResizeType::from_i32(op.rtype).unwrap() {
-      resize::ResizeType::Normal -> transform::resize(
+      resize::ResizeType::Normal => transform::resize(
         &mut self.0,
         op.width,
         op.height,
@@ -109,7 +103,7 @@ impl SpecTransform<&Resize> for photon {
   }
 }
 
-impl SpecTransform<&Watermark> for photon {
+impl SpecTransform<&Watermark> for Photon {
   fn transform(&mut self, op: &Watermark) {
     // why WATERMARK here? 
     multiple::watermark(&mut self.0, &WATERMARK, op.x, op.y);
@@ -117,7 +111,7 @@ impl SpecTransform<&Watermark> for photon {
 }
 
 //  对图片的格式做一个转换
-fn image_to_buf(img: PhotonImage, format: ImageOutputFormat) -> Vec<v8> {
+fn image_to_buf(img: PhotonImage, format: ImageOutputFormat) -> Vec<u8> {
   let raw_pixels = img.get_raw_pixels();
   let width = img.get_width();
   let height = img.get_height();
