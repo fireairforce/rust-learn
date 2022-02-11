@@ -1,24 +1,23 @@
 use anyhow::Result;
 use axum::{
-    extract::{ Path, Extension },
+    extract::{Extension, Path},
     handler::get,
-    http::{ StatusCode, HeaderValue, HeaderMap },
-    Router,
-    AddExtensionLayer,
+    http::{HeaderMap, HeaderValue, StatusCode},
+    AddExtensionLayer, Router,
 };
 use bytes::Bytes;
 use lru::LruCache;
-use percent_encoding::{ percent_decode_str, percent_encode, NON_ALPHANUMERIC };
+use percent_encoding::{percent_decode_str, percent_encode, NON_ALPHANUMERIC};
 use serde::Deserialize;
 use std::{
-    convert::TryInto,
     collections::hash_map::DefaultHasher,
-    hash::{ Hash, Hasher },
+    convert::TryInto,
+    hash::{Hash, Hasher},
     sync::Arc,
 };
 use tokio::sync::Mutex;
 use tower::ServiceBuilder;
-use tracing::{ info, instrument };
+use tracing::{info, instrument};
 
 /// 引入 protobuf 生成的代码
 mod pb;
@@ -28,12 +27,11 @@ use pb::*;
 // 参数使用 serde 做 Deserialize, axum 会自动识别并解析
 #[derive(Deserialize)]
 struct Params {
-  spec: String,
-  url: String,
+    spec: String,
+    url: String,
 }
 
 type Cache = Arc<Mutex<LruCache<u64, Bytes>>>;
-
 
 #[tokio::main]
 async fn main() {
@@ -41,16 +39,15 @@ async fn main() {
     tracing_subscriber::fmt::init();
     let cache: Cache = Arc::new(Mutex::new(LruCache::new(1024)));
 
-    // 构建路由 
+    // 构建路由
     let app = Router::new()
-    // `GET /image` 会执行 generate 函数把 spec 和 url 参数传进去
+        // `GET /image` 会执行 generate 函数把 spec 和 url 参数传进去
         .route("/image/:spec/:url", get(generate))
         .layer(
             ServiceBuilder::new()
-              .layer(AddExtensionLayer::new(cache))
-              .into_inner(),
+                .layer(AddExtensionLayer::new(cache))
+                .into_inner(),
         );
-    
     // 运行 web 服务器
     let addr = "127.0.0.1:3000".parse().unwrap();
 
@@ -75,7 +72,9 @@ async fn generate(
         .try_into()
         .map_err(|_| StatusCode::BAD_REQUEST)?;
 
-    let data = retrieve_image(&url, cache).await.map_err(|_| StatusCode::BAD_REQUEST)?;
+    let data = retrieve_image(&url, cache)
+        .await
+        .map_err(|_| StatusCode::BAD_REQUEST)?;
 
     // TODO: deal with image
     let mut headers = HeaderMap::new();
