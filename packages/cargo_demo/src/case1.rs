@@ -6,6 +6,7 @@ fn main() {
   }
 }
 
+// 在调用 find_pos 的时候，main() 函数里面的局部变量 data、 v 传进去
 fn find_pos(data: Vec<u32>, v: u32) -> Option<usize> {
   for (pos, item) in data.iter().enumerate() {
     if *item == v {
